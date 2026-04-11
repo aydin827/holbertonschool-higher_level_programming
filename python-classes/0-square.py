@@ -1,3 +1,8 @@
 #!/usr/bin/python3
-class square:
+"""Module that contains a class representing a square."""
+
+
+
+class Square:
+    """Class that represents a square."""
     pass
