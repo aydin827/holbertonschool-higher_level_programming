@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Module that contains a class representing a square."""
-
+"""
+This is an example for creating a class.
+"""
 
 
 class Square:
-    """Class that represents a square."""
+    """
+    Square class represents a square.
+    Now this class is empty.
+    """
     pass
