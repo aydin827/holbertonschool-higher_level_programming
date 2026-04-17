@@ -1,2 +1,2 @@
 -- salammm
-SHOW TABLES FROM mysql;
+SHOW TABLES;
