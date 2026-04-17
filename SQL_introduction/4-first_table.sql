@@ -1,4 +1,4 @@
 -- commentdide_exi
-CREATE TABLE IF NOT EXISTS first_table {
+CREATE TABLE IF NOT EXISTS first_table (
 id int,
-name VARCHAR(256) }
+name VARCHAR(256) );
