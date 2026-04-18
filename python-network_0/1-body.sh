@@ -1,3 +1,3 @@
 #!/bin/bash
-# show body only if status code is 200
-curl -s -f "$1"
+# follow redirects and show final response
+curl -sL "$1"
