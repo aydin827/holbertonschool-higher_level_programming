@@ -1,3 +1,5 @@
 #!/bin/bash
-#sen_fati
-curl -s -f "$1"
+#fs
+if [ "$(curl -s -o /dev/null -w "%{http_code}" "$1")" -eq 200 ]; then
+    curl -s "$1"
+fi
