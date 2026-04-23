@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+s
+"""
 import urllib.request
 import sys
 import urllib.parse
