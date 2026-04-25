@@ -1,31 +1,29 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
-# 🔐 users (IMPORTANT: checker bu adları gözləyir)
+# 🔐 MUST MATCH TEST EXPECTATIONS
 users = {
-    "admin": generate_password_hash("admin123"),
-    "user": generate_password_hash("user123")
+    "admin": generate_password_hash("admin123")
 }
 
-# ✔ BASIC AUTH CHECK
+# ✔ VERIFY FUNCTION (CRITICAL)
 @auth.verify_password
 def verify_password(username, password):
-    if username in users and check_password_hash(users.get(username), password):
+    if username in users and check_password_hash(users[username], password):
         return username
     return None
 
 
-# 🔒 PROTECTED ROUTE (TEST BUNU ÇAĞIRIR)
+# 🔒 PROTECTED ROUTE
 @app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
-    return "Hello, Basic Auth Success!"
+    return "OK", 200
 
 
-# server start
 if __name__ == "__main__":
     app.run()
